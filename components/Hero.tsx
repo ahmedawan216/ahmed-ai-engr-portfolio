@@ -19,12 +19,14 @@ const stats = [
 
 function Counter({ value }: { value: number }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { margin: '-40px' });
+  const isInView = useInView(ref, { once: false, amount: 0 });
   const motionValue = useMotionValue(0);
   const [display, setDisplay] = useState(0);
+  const hasStarted = useRef(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasStarted.current) {
+      hasStarted.current = true;
       const controls = animate(motionValue, value, {
         duration: 3,
         ease: 'easeOut',
@@ -33,9 +35,6 @@ function Counter({ value }: { value: number }) {
         repeatDelay: 1.5,
       });
       return () => controls.stop();
-    } else {
-      motionValue.set(0);
-      setDisplay(0);
     }
   }, [isInView, value, motionValue]);
 

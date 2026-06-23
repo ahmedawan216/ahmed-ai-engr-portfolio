@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://your-domain.vercel.app'),
+  metadataBase: new URL('https://ahmed-ai-engr-portfolio.vercel.app'),
   title: 'Ahmed Awan - AI Engineer',
   description:
     'AI Engineer building RAG systems, multi-agent AI, and LLM-powered applications. From frontend developer to AI builder — I build real, deployed AI products.',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       'AI Engineer building RAG systems, multi-agent AI, and LLM-powered applications. From frontend developer to AI builder — I build real, deployed AI products.',
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-domain.vercel.app',
+    url: 'https://ahmed-ai-engr-portfolio.vercel.app',
     siteName: 'Ahmed Awan - AI Engineer',
     images: [
       {
